@@ -1,0 +1,35 @@
+=================================
+Introduction
+=================================
+
+
+
+Structure of this training
+*****************************************
+The training is divided in three blocks, each with a duration of one week. The first two blocks take the trainees to a selection of theoretical topics and practical examples and exercises. The third block is a design exercise in the form of a mini project.
+
+Every day of the training follows a similar pattern: at the start of the day, the couple together builds the plan for the day. Theory and practical work can be mixed within the day, according to the couple's preferences. At the end of the day, the learnings, experiences, questions and issues, and other details are documented in 3 slides PowerPoint. These slides are discussed with the coach or buddy, and feedback is provided. In this manner, in three weeks a 50-slide PowerPoint presentation is created documenting the full learning process.
+
+The coach or buddy will be available only for a limited amount of time, as the coaching and mentoring is a side-job running in parallel to a full-time assignment. The expected time investment is about 2~3 hours per week. Dependent on the coach's preferences, the feedback can be organized as 5 half-hour sessions, one per day, of 3 full-hour sessions, every other day.
+
+At the end of the training, the couple will present the results of the mini project to a wider audience in a well-prepared presentation.
+
+Keep using what you've learned
+*****************************************
+This training will take you through important aspects of embedded programming. Every day, you'll learn new aspects. We expect that you keep using what you've learned:
+
+-	Once we introduce PEP8, we expect all your code to adhere to this standard.
+-	Once PyLint is introduced, we expect that you'll use this tool for analysis of your code in a routine manner.
+-	We expect that all exercises will be archived in Git and development is organized along the guidelines of a professional Git flow.
+
+Use your time wisely
+*****************************************
+This training is fast paced and uses a variety of sources and addresses many topics. It may be tempting to drill deeper in a topic or two. In fact, we strongly encourage you to do so. But remember, a working day has only so many hours, and the work needs to get done in that day, because tomorrow new tasks are due.
+
+Therefore, limit yourself when drilling deeper in a topic. If you want to make additional exercises to ensure you understand the practical implications of the theory, only do so once you've completed the practical part of the program. Otherwise, you may find yourself in a time squeeze completing the practical trainings everyday.
+
+Feedback is very welcome
+*****************************************
+This training is developed to provide Young Professionals with a boost of Python experience in an embedded environment. The training covers diverse topics in a fast pace. While creating this training material, we tried to balance the amount of guidance in the exercises: on one hand the exercises should be challenging and appealing to enthusiastic starters in this field; on the other hand the exercises should be reasonable and fair, for an optimal learning experience.
+
+Please summarize your feedback on this material in your presentation, so that we can further improve and optimize the contents over time.

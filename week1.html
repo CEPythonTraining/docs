@@ -1,0 +1,390 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Week 2: Python on a remote system" href="week2.html" /><link rel="prev" title="Resources and Materials" href="resources.html" />
+
+    <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
+        <title>Week 1: Starting Python - Python Training documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Python Training  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">Python Training  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources and Materials</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Week 1: Starting Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week2.html">Week 2: Python on a remote system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week3.html">Week 3: Build your Virtual Music Instrument</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="week-1-starting-python">
+<h1>Week 1: Starting Python<a class="headerlink" href="#week-1-starting-python" title="Permalink to this heading">#</a></h1>
+<section id="day-1-getting-started">
+<h2>Day 1: Getting Started<a class="headerlink" href="#day-1-getting-started" title="Permalink to this heading">#</a></h2>
+<p>Theoretical part: study Chapter 1: “Object-Oriented Design”, Chapter 2: “Objects in Python” and Chapter 3: “When Objects Are Alike” of the training book. Make the exercises at the end of each chapter.</p>
+<p>Practical part: set-up a basic set of tools on your computer:</p>
+<ul class="simple">
+<li><p>Python itself from <a class="reference external" href="https://www.python.org/downloads/releases">https://www.python.org/downloads/releases</a>, best using the Windows 64-bit installer;</p></li>
+</ul>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Pycharm Professional Trial</label><div class="tab-content docutils container">
+<ul class="simple">
+<li><p>Install the Pycharm Professional IDE from <a class="reference external" href="https://www.jetbrains.com/pycharm/download">https://www.jetbrains.com/pycharm/download</a></p></li>
+</ul>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Eclipse</label><div class="tab-content docutils container">
+<a class="reference internal image-reference" href="_images/Picture6.png"><img alt="_images/Picture6.png" class="align-right" src="_images/Picture6.png" style="width: 44.550000000000004px; height: 45.0px;" /></a>
+<a class="reference internal image-reference" href="_images/Picture7.png"><img alt="_images/Picture7.png" class="align-right" src="_images/Picture7.png" style="width: 92.25px; height: 34.65px;" /></a>
+<ul class="simple">
+<li><p>Install the Eclipse IDE from <a class="reference external" href="https://www.eclipse.org/downloads/">https://www.eclipse.org/downloads/</a>;</p></li>
+<li><p>And configure Eclipse for usage of Python by installing PyDev.</p></li>
+</ul>
+</div>
+</div>
+<p>Now, that you have installed Python and Eclipse, you can follow the introduction in Eclipse on the offered tools and create, run and debug your first Python programs.
+Python has its own package manager, called pip. Using pip, you have access to thousands and thousands of packages that make the richness of the Python eco-system. Follow the tutorial on <a class="reference external" href="https://realpython.com/what-is-pip/">https://realpython.com/what-is-pip/</a> to get your first appetite for pip.</p>
+</section>
+<section id="day-2-virtual-environment-and-pylint">
+<h2>Day 2: Virtual Environment and PyLint<a class="headerlink" href="#day-2-virtual-environment-and-pylint" title="Permalink to this heading">#</a></h2>
+<p>Theoretical part: study Chapter 4: “Expecting the Unexpected” and make the exercises at the end of the chapter. Also study PEP8 from <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a> or <a class="reference external" href="https://pep8.org">https://pep8.org</a>.</p>
+<p>Practical part: getting familiar with a virtual environment. The purpose of the virtual environment is to isolate projects on your computer from each other and to explicitly manage the dependencies for your projects.</p>
+<img alt="_images/Picture8.png" class="align-right" src="_images/Picture8.png" />
+<ul class="simple">
+<li><p>Read and practice <a class="reference external" href="https://realpython.com/python-virtual-environments-a-primer/">https://realpython.com/python-virtual-environments-a-primer/</a></p></li>
+<li><p>PyLint is a static code analyzer that provides feedback on your Python code. It can detect a series of flaws, such as deviations from PEP8 coding standards, unwanted side effects and other vulnerabilities. Read more on <a class="reference external" href="https://www.pylint.org/">https://www.pylint.org/</a>. PyLint can be installed using pip, see <a class="reference external" href="https://realpython.com/what-is-pip/">https://realpython.com/what-is-pip/</a>.</p></li>
+<li><p>Read the tutorial on <a class="reference external" href="https://realpython.com/courses/writing-cleaner-python-code-pylint/">https://realpython.com/courses/writing-cleaner-python-code-pylint/</a>.</p></li>
+</ul>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Pycharm Professional Trial</label><div class="tab-content docutils container">
+<p>No extra’s needed.</p>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Eclipse</label><div class="tab-content docutils container">
+<ul class="simple">
+<li><p>Update your Eclipse/PyDev settings to make use of the virtual environment, see <a class="reference external" href="https://www.pydev.org/manual_101_interpreter.html">https://www.pydev.org/manual_101_interpreter.html</a>.</p></li>
+<li><p>The PyLint integration for Eclipse / PyDev is described here: <a class="reference external" href="https://www.pydev.org/manual_adv_pylint.html">https://www.pydev.org/manual_adv_pylint.html</a></p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="day-3-git">
+<h2>Day 3: Git<a class="headerlink" href="#day-3-git" title="Permalink to this heading">#</a></h2>
+<p>Theoretical part: study Chapter 5: “When to use Object-Oriented Programming” and Chapter 6: “Python Data Structures”. Make the exercises at the end of each chapter.</p>
+<p>Practical part: getting familiar with the professional Git-flow:</p>
+<img alt="_images/Picture9.png" class="align-right" src="_images/Picture9.png" />
+<a class="reference internal image-reference" href="_images/Picture10.png"><img alt="_images/Picture10.png" class="align-right" src="_images/Picture10.png" style="width: 173.70000000000002px; height: 65.25px;" /></a>
+<ul class="simple">
+<li><p>Install git on your Windows computer from <a class="reference external" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a>. Study the videos on this page: <a class="reference external" href="https://git-scm.com/doc">https://git-scm.com/doc</a>.</p></li>
+</ul>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Pycharm Professional Trial</label><div class="tab-content docutils container">
+<p>No extra’s needed.</p>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Eclipse</label><div class="tab-content docutils container">
+<ul class="simple">
+<li><p>Install the Egit client in your Eclipse: <a class="reference external" href="https://www.eclipse.org/egit/download/">https://www.eclipse.org/egit/download/</a>.</p></li>
+</ul>
+</div>
+</div>
+<ul class="simple">
+<li><p>Follow a Git tutorial, from Coursera or find one on YouTube e.g. <a class="reference external" href="https://www.youtube.com/watch?v=8JJ101D3knE">https://www.youtube.com/watch?v=8JJ101D3knE</a>. You can also find a lot of tutorials and reference materials here: <a class="reference external" href="https://git-scm.com/docs">https://git-scm.com/docs</a>. Personally, I find it useful to use git command line tools for initializing a git repository and managing that repository. For day-to-day routine activities, I prefer using the tools integrated in my IDE. Please go-ahead, give it a try and figure out what suits you best.</p></li>
+<li><p>Read the blog by Vincent Driessen: <a class="reference external" href="https://nvie.com/posts/a-successful-git-branching-model/">https://nvie.com/posts/a-successful-git-branching-model/</a> and practice the steps as described in this blog. This blog describes the structure of a master branch, a development branch and multiple feature and bugfix branches. The importance of such separation needs to be stressed and should become your default way of working in any software project. You create your code as features, one feature per feature branch; you issue pull requests to merge your features with the development branch once your feature development is complete; your master branch holds the releases of your team.</p></li>
+<li><p>Create a readme.md in the root of a project and experiment how you can provide the essential information that any user of your code should know. The format of such a file is called MarkDown; you can find an introduction to MarkDown syntax here.</p></li>
+</ul>
+</section>
+<section id="day-4-strings-and-regular-expressions">
+<h2>Day 4: Strings and Regular Expressions<a class="headerlink" href="#day-4-strings-and-regular-expressions" title="Permalink to this heading">#</a></h2>
+<p>Theoretical part: study Chapter 7: “Python Object-Oriented Shortcuts” and Chapter 8: “Strings and Serialization”. Make the exercises at the end of each chapter.
+Note that chapter 8 includes regular expressions. These are often used for filtering patterns in text strings and are somewhat complex to understand. Therefore, follow the more elaborate training on <a class="reference external" href="https://realpython.com/regex-python/">https://realpython.com/regex-python/</a> and <a class="reference external" href="https://realpython.com/regex-python-part-2/">https://realpython.com/regex-python-part-2/</a>.
+When developing your regular expressions, you may find it useful to debug these in <a class="reference external" href="https://regex101.com/">https://regex101.com/</a>.</p>
+<img alt="_images/Picture11.png" class="align-right" src="_images/Picture11.png" />
+<p>Practical part: developing unit tests using PyTest: <a class="reference external" href="https://pytest.org/">https://pytest.org/</a>. Use the tutorials from <a class="reference external" href="https://realpython.com/python-testing/">https://realpython.com/python-testing/</a> and <a class="reference external" href="https://realpython.com/pytest-python-testing/">https://realpython.com/pytest-python-testing/</a>.
+For the PyTest integration in Eclipse / PyDev see <a class="reference external" href="https://www.pydev.org/manual_adv_pyunit.html">https://www.pydev.org/manual_adv_pyunit.html</a></p>
+</section>
+<section id="day-5-qt-and-python">
+<h2>Day 5: Qt and Python<a class="headerlink" href="#day-5-qt-and-python" title="Permalink to this heading">#</a></h2>
+<img alt="_images/Picture12.png" class="align-right" src="_images/Picture12.png" />
+<p>Today, no theoretical part.
+Create your first UI using QT and its Python bindings in PyQT. Follow the tutorial on <a class="reference external" href="https://realpython.com/python-pyqt-gui-calculator/">https://realpython.com/python-pyqt-gui-calculator/</a>.
+When you’re done with this simple calculator, you can extend the exercise as follows:</p>
+<ul class="simple">
+<li><p>Recreate the calculator using Qt Designer, download from <a class="reference external" href="https://www.qt.io/download">https://www.qt.io/download</a> and see <a class="reference external" href="https://doc.qt.io/qt-5/qtdesigner-manual.html">https://doc.qt.io/qt-5/qtdesigner-manual.html</a> for documentation.</p></li>
+<li><p>Extend the calculator into a scientific calculator.</p></li>
+</ul>
+</section>
+<section id="summary-of-the-first-week">
+<h2>Summary of the first week<a class="headerlink" href="#summary-of-the-first-week" title="Permalink to this heading">#</a></h2>
+<p>In the first week, you have learned and practiced:</p>
+<ul class="simple">
+<li><p>Python data structures and objects</p></li>
+<li><p>A work environment including debugger and virtual environment</p></li>
+<li><p>The use of pip</p></li>
+<li><p>Using PyLint to check your code</p></li>
+<li><p>Collaborative workflows using a professional Git-flow</p></li>
+<li><p>Creating unit tests using PyTest</p></li>
+<li><p>Regular expressions</p></li>
+<li><p>UI design for Python using Qt</p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="week2.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Week 2: Python on a remote system</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="resources.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Resources and Materials</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Capgemini BV
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Week 1: Starting Python</a><ul>
+<li><a class="reference internal" href="#day-1-getting-started">Day 1: Getting Started</a></li>
+<li><a class="reference internal" href="#day-2-virtual-environment-and-pylint">Day 2: Virtual Environment and PyLint</a></li>
+<li><a class="reference internal" href="#day-3-git">Day 3: Git</a></li>
+<li><a class="reference internal" href="#day-4-strings-and-regular-expressions">Day 4: Strings and Regular Expressions</a></li>
+<li><a class="reference internal" href="#day-5-qt-and-python">Day 5: Qt and Python</a></li>
+<li><a class="reference internal" href="#summary-of-the-first-week">Summary of the first week</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/tabs.js"></script>
+    </body>
+</html>

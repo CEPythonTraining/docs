@@ -1,0 +1,30 @@
+Overview
+=======================
+
+This document describes the basic software training program, for starting Young Professionals in the domain of High-Tech software. This training program aims to provide a foundation for professional Python engineers. It assumes that the trainees have some experience with Python, and are familiar with Python syntax, basic types, flow control and simple IO.
+
+The training requires about three weeks to complete. The training assumes that the trainees are working in couples under the supervision of a coach or buddy. Dependent on the progress of the couples, they may decide to elaborate further on topics to enhance their learning experience.
+
+By the end of this training, the trainees have demonstrated the following:
+
+-	Set-up and routine maintenance of their workstation, IDE and related tools
+-	Familiarization with a professional GIT flow
+-	The use of a collection of Python development tools
+-	Mastering Object-Oriented concepts and their application in Python
+-	Selected Pythonic topics, including PEP8
+-	Set-up and system administration of an embedded Linux system
+-	Various manners to connect to an embedded Linux system over a network
+-	Software development for an embedded Linux system
+-	Working together as a team
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   intro
+   resources
+   week1
+   week2
+   week3

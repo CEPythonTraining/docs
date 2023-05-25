@@ -1,0 +1,50 @@
+
+===========================================
+Week 3: Build your Virtual Music Instrument
+===========================================
+
+In the past two weeks, you have covered a lot of the basic material that a professional Python programmer in the
+embedded industry should master. Now, it is time to put things to practice.
+This week, you’ll define and execute your own project. The expected result of this project is a virtual music instrument.
+Your SBC can be equipped with a video camera. Grabbing and processing the video images allows you to define your own
+interaction with an instrument. You can play air-guitar and have the camera recognize your strokes; you can draw a piano
+keyboard and have the camera see how your fingers are moving or you can draw a number of circles and use your pen and
+pencils as drumsticks. Of course, you can also define your own virtual instrument.
+The basic idea is to detect your movements with reference to some frame via a camera, and to produce audio tones based
+on that data. Here some pointers for inspiration:
+
+-	A simple Air Guitar: https://devpost.com/software/airguitar
+-	A simple Paper Piano: https://rdmilligan.wordpress.com/2015/10/22/paper-piano-using-python-and-opencv/
+-	An elaborate project with image recognition for a full-fledged Air Piano: https://towardsdatascience.com/air-piano-using-opencv-and-python-298cb22097d9
+-	A paper on a scientific project to implement Air Drums: https://www.researchgate.net/profile/Prospero_Naval/publication/338444294_Air_Drums_Playing_Drums_Using_Computer_Vision/links/5e607ed392851cefa1dee380/Air-Drums-Playing-Drums-Using-Computer-Vision.pdf
+
+Approach
+********
+
+Any project should start with a plan. Your first step is of course building your own plan:
+
+-	Create a list of activities that you expect to execute
+-	Make an inventory of your uncertainties or risks
+-	Define actions to reduce the uncertainties and risks
+-	Make a roster for the week
+-	Put your expected activities and all actions to reduce uncertainties and risks into the roster
+
+Building and using such a plan helps you in multiple ways:
+
+-	It encourages you to consider all aspects until the very end
+-	You can measure your own progress with respect to the plan and see if you’re still on track
+-	It encourages you to pull in the activities to reduce uncertainties and risks
+
+By the way, do you have enough time planned for preparation of the presentation at the end of the week?
+
+Some Technical Hints
+********************
+
+You’ll find that all links to the air instruments are based on the usage of OpenCV. Apparently, that’s the way to go.
+If you’re Python code is eating up all your compute power, you can move to another Python interpreter called PyPy.
+Unlike Python, PyPy is a Just-In-Time compiler and is typically faster on the long run. The speed-up can be tremendous –
+up to a factor 40 has been reported. See https://realpython.com/pypy-faster-python/ for details.
+You’re working as a team on a music instrument. How nice would it be if you can play your instruments together? You may
+want to consider keeping the video capture and recognition part well separated from the audio processing. You can
+exchange the information from the video capture to the audio processing via MQTT. This way, you get the option to play
+together and extent your instruments over the Internet nearly for free.
